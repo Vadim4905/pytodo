@@ -1,0 +1,12 @@
+{% include 'main/base.html' %}
+
+{% block content %}
+
+<h1>{{task.name}}</h1>
+
+{% for subtask in subtasks %}
+<h3>{{subtask.name}}</h3>
+
+{% endfor %}
+
+{% endblock  %}

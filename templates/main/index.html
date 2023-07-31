@@ -1,0 +1,19 @@
+{% include 'main/base.html' %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% block content %}
+
+
+{%  for task in tasks %}
+    <a href="{% url 'task_detail' task.pk %}">
+    <h1>{{task.name}}</h1>
+    </a> 
+
+    {% for subtask in task.subtask_set.all %}
+    
+        <h3>-{{subtask.name}}</h3>
+    {% endfor %}
+    <br>
+{% endfor %}
+
+{% endblock  %}
